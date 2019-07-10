@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="cgv_button" layoutX="237.0" layoutY="51.0" mnemonicParsing="false" onAction="#CGV_on" prefHeight="40.0" prefWidth="114.0" text="실행">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TabPane fx:id="tabpane" layoutX="23.0" layoutY="91.0" prefHeight="395.0" prefWidth="557.0" style="-fx-background-color: rgba(0,0,0,0.5); visibility: hide;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="영화상영정보">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="473.0" style="-fx-background-color: white;">
+                     <children>
+                        <ComboBox fx:id="place_cgv" layoutX="14.0" layoutY="29.0" onAction="#Local_select_CGV" prefWidth="150.0" promptText="지역을 선택하세요" />
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="10.0" prefWidth="42.0" text="지역">
+                           <font>
+                              <Font name="NanumBarunGothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="theater_cgv" layoutX="176.0" layoutY="29.0" prefWidth="150.0" promptText="영화관을 선택하세요" />
+                        <Label alignment="CENTER" layoutX="176.0" layoutY="11.0" prefHeight="19.0" prefWidth="54.0" text="영화관">
+                           <font>
+                              <Font name="NanumBarunGothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="337.0" layoutY="10.0" mnemonicParsing="false" onAction="#Search_CGV" prefHeight="40.0" prefWidth="88.0" text="검색하기" />
+                        <ListView fx:id="CGVmovie_chart" layoutX="51.0" layoutY="65.0" onMouseClicked="#CGVtime" prefHeight="276.0" prefWidth="206.0" />
+                        <Label layoutX="337.0" layoutY="65.0" style="-fx-background-color: white;" text="영화시간" />
+                        <Label layoutX="416.0" layoutY="65.0" style="-fx-background-color: white;" text="남은좌석" />
+                        <ListView fx:id="movietime" layoutX="326.0" layoutY="80.0" prefHeight="246.0" prefWidth="149.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="이벤트 둘러보기">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <ListView fx:id="CGVeventlist" layoutX="7.0" layoutY="7.0" onMouseClicked="#EventImageShow" prefHeight="355.0" prefWidth="287.0" />
+                        <ImageView fx:id="eventImage" fitHeight="187.0" fitWidth="223.0" layoutX="310.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="315.0" layoutY="304.0" text="사진을 보고 싶은 이벤트를">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="355.0" layoutY="327.0" text="클릭하여 주세요">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="eventbtn" layoutX="369.0" layoutY="254.0" mnemonicParsing="false" onAction="#hyperlink" style="visibility: hide;" text="이벤트 바로가기" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="lbl_top" alignment="CENTER" layoutX="161.0" layoutY="8.0" prefHeight="32.0" prefWidth="265.0" style="-fx-background-color: white;" text="실행버튼을 클릭해주세요">
+         <font>
+            <Font name="NanumBarunGothic" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
